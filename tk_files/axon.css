@@ -1,0 +1,1027 @@
+@import url("fuentes/stylesheet.css");
+/* //// VARIABLES ////*/
+.marcar {
+  border: 1px solid #ffffff;
+}
+.oculto {
+  display: none;
+}
+body {
+  background-color: #fff;
+  padding: 0;
+  margin: 0;
+  font-family: opensans;
+  font-size: 0.8em;
+  color: #666;
+  font-weight: 100;
+}
+h2 {
+  font-size: 2rem;
+  margin: 0px 0px 5px;
+  display: block;
+  color: #000000;
+  font-weight: 600;
+}
+h3 {
+  font-size: 20px;
+  margin: 0px 0px 5px;
+  display: block;
+  color: #666;
+  font-weight: 100;
+}
+.home .descripcion{
+  color: #828282;
+  padding: 1rem 0rem;
+  font-weight: 500;
+}
+.home  #PNLBotonSiguiente{
+  margin-right: 1rem;
+}
+.home #PNLValidar {
+  margin-right: 1rem;
+}
+/* //// FORMULARIOS ////*/
+label {
+  font-size: 1em;
+  font-weight: bold;
+  margin: 0 15px 0 0;
+  width: 8em;
+  padding: 3px 0 0;    
+  color: #000000;
+}
+input[type=text],
+input[type=password],
+select {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  background-color: transparent;
+  padding: 2px 5px;
+  font-size: 1em;
+  color: #000;
+  width: 100%;
+  height: 2rem;
+  margin-top: .5rem;
+}
+.grupo-item {
+  overflow: hidden;
+  margin: 0 0 15px;
+}
+.grupo-input {
+  width: 100%;
+}
+.grupo-boton {
+  float: left;
+}
+.boton-input {
+  border: 0 none;
+}
+img[src="../img/img_calendario.png"] {
+  position: relative;
+  top: 4px;
+}
+/* //// MENSAJES ////*/
+.mensaje-1 {
+  background: none repeat scroll 0% 0% #ddd;
+  padding: 15px;
+  font-size: 0.8em;
+  text-align: justify;
+}
+/* //// ESTRUCTURA ////*/
+.contenedor {
+  background-color: #fff;
+  border: 0px solid #ccc;
+  margin: 20px auto 30px;
+  width: 954px;
+  box-shadow: 1px 2px 3px;
+  overflow: hidden;
+  padding: 0 0 30px;
+  border-bottom: 3px solid #000000;
+}
+.cabezote {
+  overflow: hidden;
+  height: 100px;
+  width: 100%;
+  margin: 0 auto;
+  background: #ffffff;
+}
+.cabezote .segmento-cabezote {
+  float: left;
+  width: 180px;
+  height: 100px;
+  display: none;
+}
+.cabezote .imagen-cabecera {
+  padding: 1rem;
+}
+.barra-lateral {
+  width: 180px;
+  float: left;
+  margin-right: 0px 10px 10px 0;
+  padding: 0px 0 10px;
+}
+.contenido {
+  padding: 15px;
+  float: left;
+  width: 730px;
+  margin-left: 15px;
+}
+.clear {
+  clear: both;
+  width: 100%;
+}
+/* //// POPUP ////*/
+.PanelPopUp {
+  width: 100%;
+  background-color: rgba(0,0,0,0.6);
+  left: 0 !important;
+  top: 0 !important;
+  width: 100%;
+  height: 100%;
+  text-align:center;
+}
+.PanelPopUp .ventana-popup {
+  width: 500px;
+  margin: 150px auto 0;
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 2px 2px 3px rgba(0,0,0,0.5);
+  padding: 20px 30px;
+  position: relative;
+}
+.PanelPopUp .ventana-popup.popup-plantilla {
+  width: 580px;
+}
+.PanelPopUp .ventana-popup .boton-cerrar {
+  position: absolute;
+  right: 2px;
+  top: 2px;
+}
+.PanelPopUp .ventana-popup .descripcion {
+  margin: 0 0 15px;
+}
+.PanelPopUp .ventana-popup .descripcion table {
+  width: 100%;
+}
+.PanelPopUp .ventana-popup .grupo-botones {
+  overflow: hidden;
+  padding: 10px 0px 0px;
+  border-top: 1px dashed #ccc;
+}
+.PanelPopUp .ventana-popup .grupo-botones input {
+  float: right;
+  margin-left: 10px;
+}
+/* //// PAGINA ERROR ////*/
+
+.pagina-error .contenedor { 
+  width: 100%;
+}
+.pagina-error .contenido {
+  width: 1024px;
+  margin: 0 auto;
+  text-align: center;
+  display: block;
+  float: none;
+  padding: 2rem 0rem;
+}
+.pagina-error .datos-usuario {
+  padding: 0px 0px 9px;
+  border-bottom: 1px solid #ccc;
+  overflow: hidden;
+  font-size: 0.8em;
+  color: #666;
+  text-align: right;
+}
+.pagina-error .error {
+  width: 600px;
+  border: 1px solid #f99;
+  margin: 0px auto;
+  padding: 180px 20px 20px;
+  background: url("../img/alerta-error.png") no-repeat scroll center 40px transparent;
+}
+.pagina-error .tabla-error {
+  background-color: #eee;
+  margin: 0px auto;
+  width: 100%;
+  text-align: left;
+}
+.pagina-error .tabla-error td {
+  padding: 8px;
+  border-bottom: 1px solid #fff;
+}
+.pagina-error .tabla-error td:last-child {
+  border-bottom: 0 none;
+}
+.pagina-error .regresar {
+  height: auto;
+  text-align: left;
+  padding: 0rem 1rem;
+}
+.pagina-error .regresar input {
+  position: relative;
+}
+/* //// TABLAS ////*/
+.tabla-tipo-uno td {
+  vertical-aling: top;
+  padding-bottom: 10px;
+}
+.tabla-actualizar-datos .FilaProducto > td span {
+  text-transform: lowercase;
+  display: block;
+  padding-right: 10px;
+}
+.tabla-actualizar-datos .FilaProducto > td span::first-letter {
+  text-transform: uppercase;
+}
+.label-configurar-productos {
+  margin-right: 10px;
+}
+.celda-label {
+  padding-bottom: 10px;
+}
+.tabla-productos div.AcordeonEncabezado {
+  border-bottom: 2px solid #777;
+  cursor: pointer;
+  font-weight: bold;
+  color: #777;
+}
+.tabla-productos .AcordeonContenido .TablaProducto {
+  margin: 10px 0 20px;
+}
+.tabla-productos .AcordeonContenido td {
+  vertical-align: top;
+}
+.tabla-productos-configurar .AcordeonContenido td:nth-child(1) {
+  width: 20px !important;
+}
+.tabla-productos-configurar .AcordeonContenido td:nth-child(2) {
+  border-right: 1px solid #ccc;
+  width: 150px !important;
+  padding-right: 10px;
+}
+.tabla-productos-configurar .AcordeonContenido td:nth-child(3) {
+  border-right: 1px solid #ccc;
+  padding: 0 10px;
+  width: 150px !important;
+}
+.tabla-productos-configurar .AcordeonContenido td:nth-child(4) {
+  border-right: 1px solid #ccc;
+  width: 150px !important;
+  padding: 0 10px;
+}
+.tabla-productos-configurar .AcordeonContenido td:nth-child(5) {
+  padding: 0 6px 0 10px;
+}
+.tabla-productos-configurar .AcordeonContenido td:nth-child(6) {
+  padding: 0 0 0 0;
+}
+.tabla-productos-configurar .AcordeonContenido td:nth-child(6) input {
+  width: 100px;
+  width: 170px !important;
+}
+.tabla-productos-ver .AcordeonContenido table {
+  border-spacing: 0 10px;
+}
+.tabla-productos-ver .AcordeonContenido td {
+  padding: 0 10px;
+  border-right: 1px solid #ccc;
+}
+.tabla-productos-ver .AcordeonContenido tr:nth-child(1) {
+  font-weight: bold;
+}
+.tabla-productos-ver .AcordeonContenido tr:nth-child(1) td:nth-child(1) {
+  width: 0px !important;
+  padding-left: 0;
+  padding-bottom: 10px;
+  border-right: 0 none;
+  border-bottom: 1px solid #ccc;
+}
+.tabla-productos-ver .AcordeonContenido tr:nth-child(1) td:nth-child(2) {
+  border-right: 0 none;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+}
+.tabla-productos-ver .AcordeonContenido tr:nth-child(1) td:nth-child(3) {
+  border-right: 0 none;
+  padding-right: 0;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+}
+.tabla-productos-ver .AcordeonContenido tr:nth-child(2) td:nth-child(1) {
+  border-right: 1px solid #ccc;
+  width: 25%;
+  padding-left: 0 !important;
+}
+.tabla-productos-ver .AcordeonContenido tr:nth-child(2) td:nth-child(2) {
+  border-right: 1px solid #ccc;
+  width: 25%;
+}
+.tabla-productos-ver .AcordeonContenido tr:nth-child(2) td:nth-child(3) {
+  border-right: 1px solid #ccc;
+  width: 25%;
+}
+.tabla-productos-ver .AcordeonContenido tr:nth-child(2) td:nth-child(4) {
+  width: 25%;
+  padding-right: 0;
+  border-right: 0 none;
+}
+.tabla-productos-ver .AcordeonContenido tr:nth-child(3) td:nth-child(1) {
+  border-right: 1px solid #ccc;
+  width: 25%;
+  padding-left: 0 !important;
+}
+.tabla-productos-ver .AcordeonContenido tr:nth-child(3) td:nth-child(2) {
+  border-right: 1px solid #ccc;
+  width: 25%;
+}
+.tabla-productos-ver .AcordeonContenido tr:nth-child(3) td:nth-child(3) {
+  border-right: 1px solid #ccc;
+  width: 25%;
+}
+.tabla-productos-ver .AcordeonContenido tr:nth-child(3) td:nth-child(4) {
+  width: 25%;
+  padding-right: 0;
+}
+.tabla-consulta-movimientos {
+  width: 100%;
+}
+.tabla-consulta-movimientos > tbody > tr:nth-child(2) td {
+  padding-right: 7px;
+}
+.tabla-consulta-movimientos table.AcordeonEncabezado {
+  border-bottom: 2px solid #777;
+  cursor: pointer;
+  font-weight: bold;
+  color: #777;
+  width: 100%;
+}
+.tabla-consulta-movimientos div > div.AcordeonContenido > table {
+  width: 100%;
+}
+.tabla-consulta-movimientos div > div.AcordeonContenido > table > tbody > tr:nth-child(2) > td {
+  border-top: 1px dashed #ccc;
+  padding-top: 20px;
+}
+.tabla-consulta-movimientos div > div.AcordeonContenido > table > tbody > tr:nth-child(2) td:nth-child(1) {
+  width: 125px;
+}
+.tabla-consulta-movimientos div > div.AcordeonContenido > table > tbody > tr:nth-child(2) td:nth-child(2) {
+  width: 110px;
+}
+.tabla-consulta-movimientos div > div.AcordeonContenido > table > tbody > tr:nth-child(2) td:nth-child(3) {
+  width: 45px;
+}
+.tabla-consulta-movimientos div > div.AcordeonContenido > table > tbody > tr:nth-child(2) td:nth-child(4) {
+  width: 180px !important;
+}
+.tabla-consulta-movimientos div > div.AcordeonContenido > table > tbody > tr:nth-child(2) td:nth-child(5) {
+  width: 100px !important;
+}
+.tabla-consulta-movimientos div > div.AcordeonContenido > table > tbody > tr:nth-child(2) td:nth-child(6) {
+  width: 100px !important;
+}
+.tabla-consulta-movimientos div > div.AcordeonContenido > table > tbody > tr:nth-child(2) td:nth-child(7) {
+  width: 0 !important;
+}
+.tabla-consulta-movimientos div > div.AcordeonContenido .TablaProducto {
+  table-layout: fixed;
+  width: 100%;
+  border-spacing: 0 10px;
+}
+.tabla-consulta-movimientos div > div.AcordeonContenido .TablaProducto td {
+  padding: 0 10px;
+  border-right: 1px solid #ccc;
+  vertical-align: top;
+}
+.tabla-consulta-movimientos div > div.AcordeonContenido .TablaProducto tr:nth-child(1) {
+  font-weight: bold;
+}
+.tabla-consulta-movimientos div > div.AcordeonContenido .TablaProducto tr:nth-child(1) td {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+  border-right: 0 none;
+}
+.tabla-consulta-movimientos div > div.AcordeonContenido .TablaProducto tr:nth-child(1) td:nth-child(1) {
+  width: 50%;
+  padding-left: 0;
+}
+.tabla-consulta-movimientos div > div.AcordeonContenido .TablaProducto tr:nth-child(1) td:nth-child(2) {
+  width: 25%;
+}
+.tabla-consulta-movimientos div > div.AcordeonContenido .TablaProducto tr:nth-child(1) td:nth-child(3) {
+  width: 25%;
+  padding-right: 0;
+}
+.tabla-consulta-movimientos div > div.AcordeonContenido .TablaProducto tr:nth-child(2) td {
+  width: 25%;
+}
+.tabla-consulta-movimientos div > div.AcordeonContenido .TablaProducto tr:nth-child(2) td:nth-child(1) {
+  padding-left: 0;
+}
+.tabla-consulta-movimientos div > div.AcordeonContenido .TablaProducto tr:nth-child(2) td:nth-child(4) {
+  border-right: 0 none;
+}
+.tabla-consulta-movimientos div > div.AcordeonContenido .TablaProducto tr:nth-child(3) td {
+  width: 25%;
+}
+.tabla-consulta-movimientos div > div.AcordeonContenido .TablaProducto tr:nth-child(3) td:nth-child(1) {
+  padding-left: 0;
+}
+.tabla-consulta-movimientos div > div.AcordeonContenido .TablaProducto tr:nth-child(3) td:nth-child(2) {
+  border-right: 0 none;
+}
+.tabla-consulta-movimientos div > div.AcordeonContenido input[type=text] {
+  width: 80%;
+}
+.tabla-consultar-transacciones {
+  width: 100%;
+  margin-bottom: 10px;
+}
+.tabla-consultar-transacciones td:nth-child(1) {
+  width: 130px;
+}
+.tabla-consultar-transacciones.tabla-fecha td:nth-child(1) {
+  vertical-align: bottom;
+  padding-bottom: 4px;
+}
+.tabla-consultar-transacciones.tabla-fecha td:nth-child(2) {
+  width: 204px;
+}
+.tabla-consultar-transacciones.tabla-total td:nth-child(1) {
+  vertical-align: bottom;
+}
+.tabla-consultar-transacciones.tabla-total td:nth-child(2) {
+  width: 210px;
+}
+.tabla-consultar-transacciones.tabla-transaccion td:nth-child(1) {
+  vertical-align: bottom;
+  padding-bottom: 4px;
+}
+.tabla-consultar-transacciones.tabla-transaccion td:nth-child(2) {
+  width: 165px;
+}
+.tabla-consultar-transacciones.tabla-destinatarios td:nth-child(1) {
+  vertical-align: bottom;
+  padding-bottom: 4px;
+}
+.tabla-consultar-transacciones.tabla-destinatarios td:nth-child(2) {
+  width: 165px;
+}
+.tabla-lista-trasacciones {
+  width: 100%;
+}
+.tabla-transacciones-detalle table {
+  table-layout: auto !important;
+}
+.tabla-transacciones-detalle table td:nth-child(1) {
+  width: 40px;
+}
+.tabla-transacciones-detalle table td:nth-child(2) {
+  width: 100px;
+}
+.tabla-transacciones-detalle table td:nth-child(3) {
+  width: 100px;
+}
+.tabla-transacciones-detalle table td:nth-child(4) {
+  width: 100px;
+}
+.tabla-transacciones-detalle table td:nth-child(5) {
+  width: 120px;
+}
+.tabla-transacciones-detalle table td:nth-child(6) {
+  width: 240px;
+}
+.tabla-transacciones-detalle table td:nth-child(7) {
+  width: 60px;
+}
+.tabla-transacciones-detalle table td:nth-child(8) {
+  width: 20px;
+}
+.tabla-transacciones-detalle table td:nth-child(9) {
+  width: 100px;
+}
+.tabla-asignar-perfil {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+.tabla-asignar-perfil label {
+  width: 60px;
+  margin-right: 5px;
+}
+.tabla-asignar-perfil td {
+  border: 0 none;
+  padding-bottom: 20px !important;
+}
+.tabla-asignar-perfil td.celda-label {
+  width: 66px;
+}
+.tabla-asignar-perfil .celda-grupos-label {
+  vertical-align: top;
+  background-color: #eee;
+  padding: 10px 10px !important;
+}
+.tabla-asignar-perfil .celda-grupos-input {
+  vertical-align: top;
+  background-color: #eee;
+  padding: 10px 0 !important;
+}
+/* //// HOME ////*/
+.home .contenedor {
+  width: 100%;
+  margin: 0rem;
+}
+
+.home .contenedor .cabezote {
+  width: 100%;
+  margin: 0 auto;
+  background: #ffffff;
+}
+
+.home .contenedor .cabezote #IMCabecera{ 
+  padding: 2rem;
+}
+
+
+.home .contenido {
+  float: none;
+  width: 100%;
+  margin: 0 auto;
+}
+.home .formulario-contendor {
+  margin: 0px auto 40px;
+  width: 23rem;
+  border: 1px solid #ccc;
+  padding: 3rem 5rem 1rem 5rem;
+  overflow: hidden;
+  box-shadow: 0px 0px 10px #ccc;
+  border-radius: .3rem;
+}
+
+.home .formulario-contendor .grupo-input input{
+  border: 1px solid #cccccc;
+  height: 2rem;
+  border-radius: .2rem;
+  width: 96%;
+  margin-top: .5rem;
+}
+
+.home .label {
+  width: 7.5em;
+}
+.home .bienvenida {
+  display: block;
+  text-align: center;
+  font-size: 2em;
+  margin-top: 30px;
+  width: 100%;
+  color: #000000;
+}
+.home .texto-secundario {
+  display: block;
+  text-align: center;
+  margin-bottom: 30px;
+  width: 100%;
+  color: #000000;
+}
+.home .input-tarjeta-coordenadas-1 {
+  width: 2em;
+  margin-right: 10px;
+}
+.home .input-tarjeta-coordenadas-2 {
+  width: 6em;
+}
+.home .boton-ingreso {
+  float: none;
+  margin-top: 20px;
+}
+/* //// PAGINAS INTERNAS ////*/
+.datos-usuario {
+  padding: 0 0 9px;
+  border-bottom: 2px solid #ccc;
+  overflow: hidden;
+  font-size: 0.7em;
+  color: #666;
+  margin-bottom: 35px;
+}
+.boton-regesar {
+  position: relative;
+  top: -28px;
+}
+.columna {
+  float: left;
+  margin-right: 15px;    
+  float: left;
+  margin-right: 15px;
+  text-align: left;
+  padding-right: 2rem;
+}
+.fila-boton-salida-segura {
+  float: right;
+}
+.menu img {
+  display: block;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+}
+.zona-superior {
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.zona-superior .subtitulos {
+  font-size: 23px;
+  margin: 0px 0px 0;
+  display: block;
+  text-align: center;
+  float:left;
+  color: #333;
+  font-weight: 100;
+}
+.zona-superior .grupo-botones {
+  float: right;
+}
+.zona-superior .grupo-botones input {
+  border-width: 0px;
+  background: #aaa;
+  display: block;
+}
+.pagina-cosulta-usuarios .zona-superior {
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.regresar {
+  position: relative;
+  margin-bottom: 30px;
+  width: 100%;
+  height: 1px;
+}
+.regresar input {
+  border-width: 0px;
+  bottom: 0px;
+  position: absolute;
+}
+/* //// MENU ////*/
+.AcordeonSubMenu {
+  overflow: hidden !important;
+}
+/* //// TABLAS ////*/
+.tabla-tipo-uno td {
+  vertical-aling: top;
+  padding-bottom: 10px;
+}
+.tabla-tipo-dos {
+  width: 100%;
+}
+.tabla-tipo-dos td {
+  cursor: pointer;
+}
+.tabla-datos-encabezado {
+  width: 100%;
+  margin: 15px 0px 0px;
+}
+.tabla-datos-encabezado td {
+  padding: 0px !important;
+  line-height: 1em;
+  vertical-align: middle;
+}
+.tabla-datos-encabezado td:last-child {
+  text-align: center;
+  vertical-align: bottom;
+}
+.tabla-datos {
+  width: 100%;
+}
+.tabla-datos table {
+  border-collapse: collapse;  
+  width: 100%;
+}
+.tabla-datos table th {
+  padding: 3px 5px !important;
+  overflow: hidden;
+  text-align: left;
+  line-height: 1.2em;
+  background-color: #999;
+  color: #fff;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 100;
+  vertical-align: middle;
+  border: 1px solid #888;
+}
+.tabla-datos table td {
+  padding: 3px 5px !important;
+  vertical-align: top !important;
+  overflow: visible;
+  cursor: pointer;
+  z-index: 5;
+  
+  border: 1px solid #888;
+}
+.tabla-datos table td:hover:before {
+  display: block;
+  width: 2000px;
+  height: calc(100% + 2px);
+  background-color: #000;
+  position: absolute;
+  left: -1000px;
+  top: -2px;
+  z-index: 1;
+  opacity: 0.1;
+}
+.GridSelRow {
+  font-size: 8pt;
+  color: #3d4e32 !important;
+  background-color: #d1e6b3 !important;
+}
+.GridRow {
+  background-color: White;
+  font-size: 8pt;
+  color: #444 !important;
+}
+.GridPager table {
+  width: auto;
+  margin: 0 auto;
+}
+.GridPager table td {
+  padding: 3px 10px;
+  font-weight: bold;
+}
+.GridPager table td a {
+  text-decoration: none;
+  color: #333;
+}
+.GridPager table td a:hover {
+  color: #00468c;
+}
+.tabla-pantilla .primer-filtro tr:nth-child(2) input[type=text] {
+  width: 70%;
+}
+.tabla-pantilla .primer-filtro tr:nth-child(2) input[type=image] {
+  position: relative;
+  top: 4px;
+}
+.tabla-pantilla .segundo-filtro label {
+  font-weight: normal;
+}
+.tabla-pantilla .segundo-filtro input[type="radio"] {
+  float: left;
+ 
+  top: 5px;
+}
+.tabla-listar-plantillas table th:nth-child(1) {
+  width: 150px;
+}
+.tabla-listar-plantillas table th:nth-child(2) {
+  width: 150px;
+}
+.tabla-marcada {
+  border: 1px solid #f00;
+}
+.asingar-perfiles .celda-label {
+  width: 90px;
+}
+.celda-botones {
+  text-align: right;
+  border-top: 1px solid #f00;
+  padding: 10px 0 0;
+}
+.botones-pagina {
+  text-align: right;
+  padding: 10px 0px 0px;
+  border-top: 1px dashed #ccc;
+  margin-top: 15px;
+}
+.boton-icono {
+  background-color: #aaa;
+}
+.boton-icono:hover {
+  background-color: #777;
+}
+.boton-calendario {
+  position: relative;
+  top: 4px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+.tabla-pagina-fecha td {
+  padding-bottom: 10px;
+}
+.tabla-envio-archivos-transaciones .celda-etiqueta {
+  vertical-align: top;
+  width: 130px;
+}
+.tabla-envio-archivos-transaciones .celda-campo {
+  width: 220px;
+}
+.tabla-envio-archivos-transaciones .celda-nivel-aplicacion-1 {
+  vertical-align: top;
+}
+.tabla-envio-archivos-transaciones .celda-nivel-aplicacion-2 label {
+  display: block;
+  float: none;
+  font-weight: normal;
+  font-size: 13px;
+}
+.tabla-envio-archivos-transaciones .celda-nivel-aplicacion-2 input {
+  float: left;
+  margin-top: 7px;
+}
+.tabla-envio-archivos-transaciones .celda-enviar {
+  padding-left: 199px;
+  padding-top: 23px;
+}
+.pagina-ingreso-manual-transacciones td {
+  padding: 0 0 10px;
+}
+.pagina-ingreso-manual-transacciones h2 {
+  font-size: 20px;
+  margin: 0px 0px 5px;
+  display: block;
+  color: #555;
+  font-weight: 100;
+}
+.pagina-ingreso-manual-transacciones .zona-superior h2 {
+  margin: 0 0 15px;
+}
+.pagina-ingreso-manual-transacciones .zona-superior h2 span {
+  margin: 0;
+}
+.pagina-ingreso-manual-transacciones .tabla-ingreso-manual-transacciones .celda-etiqueta {
+  vertical-align: top;
+  width: 130px;
+}
+.pagina-ingreso-manual-transacciones .tabla-ingreso-manual-transacciones .celda-campo {
+  width: 260px;
+}
+.pagina-ingreso-manual-transacciones .tabla-ingreso-manual-transacciones .celda-select label {
+  display: block;
+  float: none;
+  font-weight: normal;
+  font-size: 13px;
+}
+.pagina-ingreso-manual-transacciones .tabla-ingreso-manual-transacciones .celda-select input {
+  float: left;
+  margin-top: 7px;
+}
+.pagina-ingreso-manual-transacciones .tabla-ingreso-manual-transacciones .celda-enviar {
+  padding-left: 226px;
+  padding-top: 23px;
+}
+.pagina-ingreso-manual-transacciones .tabla-ingreso-manual-transacciones-transaccion label {
+  display: block;
+  margin: 0 0 5px;
+}
+.pagina-ingreso-manual-transacciones .tabla-ingreso-manual-transacciones-transaccion .celda-etiqueta {
+  vertical-align: top;
+}
+.pagina-ingreso-manual-transacciones .tabla-ingreso-manual-transacciones-destinatario td {
+  padding-right: 10px;
+}
+.pagina-ingreso-manual-transacciones .tabla-ingreso-manual-transacciones-destinatario label {
+  display: block;
+  margin: 0 0 5px;
+}
+.pagina-ingreso-manual-transacciones .tabla-ingreso-manual-transacciones-destinatario input {
+  width: 95%;
+}
+.pagina-ingreso-manual-transacciones .tabla-ingreso-manual-transacciones-destinatario td:last-child input {
+  width: 100%;
+}
+.pagina-ingreso-manual-transacciones .tabla-ingreso-manual-transacciones-destinatario .celda-etiqueta {
+  vertical-align: top;
+}
+.pagina-ingreso-manual-transacciones .tabla-ingreso-manual-transacciones-adenda td {
+  padding-right: 10px;
+}
+.pagina-ingreso-manual-transacciones .tabla-ingreso-manual-transacciones-adenda label {
+  display: block;
+  margin: 0 0 5px;
+}
+.pagina-ingreso-manual-transacciones .tabla-ingreso-manual-transacciones-adenda .labels {
+  padding-right: 10px;
+}
+.pagina-ingreso-manual-transacciones .tabla-ingreso-manual-transacciones-adenda .celda-etiqueta {
+  vertical-align: top;
+}
+.pagina-ingreso-manual-transacciones .tabla-ingreso-manual-transacciones-enviar label {
+  display: block;
+  margin: 0 0 5px;
+}
+.pagina-ingreso-manual-transacciones .tabla-ingreso-manual-transacciones-enviar .celda-etiqueta {
+  vertical-align: top;
+}
+.tabla-consolidado {
+  background-color: #eee;
+  padding: 15px 30px;
+  border-spacing: 0px;
+  border: 1px solid #ddd;
+}
+.tabla-consolidado th {
+  font-weight: 100;
+  text-align: left;
+  padding: 20px 0px 5px;
+  border-bottom: 1px solid;
+  color: #666;
+  font-size: 20px;
+}
+.tabla-consolidado td {
+  border-bottom: 1px solid #fff;
+  padding: 6px 0;
+}
+.tabla-consolidado td:nth-child(1) {
+  width: 300px;
+}
+.tabla-consolidado td:nth-child(2) {
+  text-align: right;
+}
+.tabla-consolidado tr:last-child td {
+  border-bottom: 0 none;
+}
+.resutados-bitacora .zona-superior {
+  overflow: visible;
+}
+.pantalla-secundaria .grupo-botones {
+  float: right;
+  position: relative;
+}
+.pantalla-secundaria .grupo-botones input {
+  background: none repeat scroll 0% 0% #aaa;
+  display: block;
+  right: 0px;
+  position: absolute;
+  top: -33px;
+}
+/*Margenes impresi�n de resumen Cajero*/
+.div-margen-resumen { 
+  width :62mm;
+}
+.div-tabla-resumen 
+{    
+  /*height:50mm; */
+}
+.div-espacio-resumen 
+{  
+  height:88mm;
+}
+@media print
+{
+    @page{margin:0cm 0cm;}
+    html{margin: 30mm 82mm;}
+}
+/*Fuente impresion Cajero*/
+#ResumenCajero
+{
+    line-height:0.9;    /*Espacio entre lineas Cajero*/
+    font-family:Courier New;
+    font-style:normal;
+    font-size:9px;
+    font-weight:bold;
+    color: Black;
+    border-collapse:collapse;
+}
+/* AJUSTES */
+#ctl00_AreaTrabajo_pnlDetallePlantilla {
+  width: 100% !important;
+}
+
+@media (max-width: 900px) {
+  .contenedor{
+    width: 100%;
+  }
+  .contenido{
+    padding: 0px;
+  }
+  .home .formulario-contendor{
+    width: 82%;
+    padding: 1rem 1rem 0rem 1rem;
+  }
+  .home .contenedor .cabezote{
+    height: 70px;
+  }
+  .home .contenedor .cabezote #IMCabecera{
+    padding: 1rem;
+  }
+  .pagina-error .contenido{
+    width: 100%;
+  }
+  .pagina-error .datos-usuario{
+    padding: 1rem;
+  }
+  .pagina-error .error{
+    width: auto;
+  }
+  .fila-boton-salida-segura{
+    margin-top: 1rem;
+  }
+}
+@media (max-width: 900px) {
+  .PanelPopUp .ventana-popup {
+	  width: 300px;
+	  margin: 100px auto 0;
+	  background-color: #fff;
+	  border-radius: 6px;
+	  box-shadow: 2px 2px 3px rgba(0,0,0,0.5);
+	  padding: 20px 30px;
+	  position: relative;
+	}
+}

